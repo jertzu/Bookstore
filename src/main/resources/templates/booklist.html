@@ -12,8 +12,10 @@
 		    <th>Title</th>
 		</tr>  
     	<tr th:each = "book : ${books}">
-    		<td th:text="${book.author} + ': ' + ${book.title}"></td>		
+    		<td th:text="${book.author} + ': ' + ${book.title}"></td>
+    		<td><a th:href="@{/delete/{id}(id=${book.id})}">Delete</a></td> 		
     	</tr>
      </table>
+     <a href="/add">Add Book</a>
 </body>
 </html>
