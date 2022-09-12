@@ -13,7 +13,7 @@ public class Book {
     private String title;
     private String author;
 	
-	protected Book() {}
+	public Book() {}
 	
 	public Book(String title, String author) {
 		super();
