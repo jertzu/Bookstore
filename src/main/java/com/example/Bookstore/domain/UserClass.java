@@ -2,6 +2,8 @@ package com.example.Bookstore.domain;
 
 import javax.persistence.*;
 
+import org.springframework.lang.NonNull;
+
 @Entity
 public class UserClass {
     @Id
@@ -19,14 +21,26 @@ public class UserClass {
     @Column(name = "role", nullable = false)
     private String role;
     
+    @Column(name = "email")
+    private String email;
+    
     public UserClass() {
     }
 
-	public UserClass(String username, String passwordHash, String role) {
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public UserClass(String username, String passwordHash, String role, String email) {
 		super();
 		this.username = username;
 		this.passwordHash = passwordHash;
 		this.role = role;
+		this.email = email;
 	}
 
 	public Long getId() {
